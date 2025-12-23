@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* background-color */
+    --bg-primary-color: rgb(31, 27, 27);
+    --bg-fill-color: rgb(207, 197, 139);
+    --bg-food-color: rgb(200, 50, 50);
+    --bg--beforehover-color: rgb(100, 100, 100);
+    --bg--onhover-color: rgb(240, 231, 231);
+
+    /* text color */
+    --text-primary-color: white;
+
+    /* spacing */
+    --space-xs:4px;
+    --space-sm:8px;
+    --space-md:16px;    
+    --space-lg:24px;
+    --space-xl:32px;
+    --space-2xl:40px;
+    --space-3xl:48px;
+
+    /* border color */
+    --border-primary-color : #333333 ;
+
+
+    /* border radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    --border-radius-2xl: 24px;
+    --border-radius-full: 9999px;
+
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary-color);
+    color: var(--text-primary-color);
+
+}
+
+main,section{
+    width: 100%;
+    height: 100%;
+}
+
+.btn{
+    padding: var(--space-sm) var(--space-md);
+    border: none;
+    background-color: var(--bg--beforehover-color);
+    border-radius: var(--border-radius-full);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    background-color: var(--bg--onhover-color);
+    transform: scale(1.1);
+    
+}
+
+section{
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+
+}
+
+section .infos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.info{
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border-primary-color);
+    border-radius: var(--border-radius-md);
+}
+
+.board{
+    border: 2px solid var(--border-primary-color);
+    flex-grow : 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(50px, 1fr));
+    grid-template-rows: repeat(auto-fill , minmax(50px, 1fr));
+}
+
+.block{
+    /* width: 30px;
+    height: 30px; */
+    border: 1px solid var(--border-primary-color);
+    border-radius: 50%;
+
+}
+
+.fill{
+    background-color: var(--bg-fill-color);
+}
+
+.food {
+    background-color: var(--bg-food-color);
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.432);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .start-game , .modal .game-over{
+    padding: var(--space-3xl);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.modal .game-over{
+    display: none;
+}
